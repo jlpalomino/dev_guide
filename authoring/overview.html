@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Overview &#8212; The pyOpenSci Developer Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0-alpha.0/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing your package" href="testing.html" />
+    <link rel="prev" title="Author’s Guide" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The pyOpenSci Developer Guide</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="active">
+    <a href="index.html">Author’s Guide</a>
+  <ul class="nav sidenav_l2">
+    <li class="active">
+      <a href="">Overview</a>
+    </li>
+    <li class="">
+      <a href="testing.html">Testing your package</a>
+    </li>
+    <li class="">
+      <a href="collaboration.html">Collaboration Guide</a>
+    </li>
+    <li class="">
+      <a href="release.html">Releasing a package</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../process/intro.html">The Peer Review Process</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../process/aims_scope.html">Aims and Scope</a>
+    </li>
+    <li class="">
+      <a href="../process/guidelines.html">Peer Review Policies</a>
+    </li>
+    <li class="">
+      <a href="../process/coc.html">Community Code of Conduct</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../submissions/intro.html">Submission Guides</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../submissions/author_guide.html">Guide for Authors</a>
+    </li>
+    <li class="">
+      <a href="../submissions/reviewer_guide.html">Guide for Reviewers</a>
+    </li>
+    <li class="">
+      <a href="../submissions/editor_guide.html">Guide for Editors</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../appendices/templates.html">Appendix: Templates</a>
+  </li>
+  <li class="">
+    <a href="../appendices/glossary.html">Glossary</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/authoring/overview.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Edit this page -->
+        <a class="edit-button" href="https://github.com/pyOpenSci/dev_guide/edit/master/authoring/overview.md"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#project-template" class="nav-link">Project Template</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#template-instructions" class="nav-link">Template Instructions</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#requirements" class="nav-link">Requirements</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#readme" class="nav-link">README</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#documentation" class="nav-link">Documentation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#testing" class="nav-link">Testing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#continuous-integration" class="nav-link">Continuous Integration</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#license" class="nav-link">License</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#other-recommendations" class="nav-link">Other recommendations</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#code-style" class="nav-link">Code Style</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#linting" class="nav-link">Linting</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#badges" class="nav-link">Badges</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/pyOpenSci/dev_guide/edit/master/authoring/overview.md">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This section provides guidelines and tips for creating a Python package to submit for peer-review.</p>
+<p>pyOpenSci packages must:</p>
+<ul class="simple">
+<li><p>Have a clear README <em>including</em> installation instructions.</p></li>
+<li><p>Contain full documentation for any user-facing functions.</p></li>
+<li><p>Have a test suite that covers the major functionality of the package.</p></li>
+<li><p>Use continuous integration.</p></li>
+<li><p>Use an OSI approved software license.</p></li>
+</ul>
+<p>Do not be intimidated if you haven’t created a Python package before. We have a template
+and guidelines to help you meet all of these requirements! Below, we’ll also go into
+more detail on each of the requirements.</p>
+<div class="section" id="project-template">
+<h2>Project Template<a class="headerlink" href="#project-template" title="Permalink to this headline">¶</a></h2>
+<p>To help you package your project, we provide a template <a class="reference external" href="https://github.com/pyOpenSci/cookiecutter-pyopensci">“cookiecutter” repository</a>. The cookiecutter allows you to start a project with continuous integration, testing, and auto-documentation already in place, but with your project’s details already filled in. You don’t have to use the template as a starting point, but it may help if you are not experienced with setting up tests, continuous integration, etc.</p>
+<div class="section" id="template-instructions">
+<h3>Template Instructions<a class="headerlink" href="#template-instructions" title="Permalink to this headline">¶</a></h3>
+<p>To get started, just run the following commands and fill in the info:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cookiecutter</span>
+
+<span class="n">cookiecutter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyOpenSci</span><span class="o">/</span><span class="n">cookiecutter</span><span class="o">-</span><span class="n">pyopensci</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>For more detailed instructions, see the <a class="reference external" href="https://cookiecutter-pyopensci.readthedocs.io/en/latest/tutorial.html">cookiecutter-pyopensci tutorial</a>.</p>
+<p>For info on what comes with our cookiecutter, check out the rest of the <a class="reference external" href="https://cookiecutter-pyopensci.readthedocs.io/en/latest/">docs</a>. The <a class="reference external" href="https://cookiecutter-pyopensci.readthedocs.io/en/latest/cookiecutter_contents.html">Template Contents page</a> explains the purpose of each file that ships with the template.</p>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>This section has descriptions of all the packaging requirements for pyOpenSci.
+Most of the sections also include Good/Better/Best recommendations.
+Good meets the requirements, but going beyond the minimum can make package maintenance easier.</p>
+<div class="section" id="readme">
+<h3>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h3>
+<p>All packages should have a README.md in their root directory. The README should include, from top to bottom:</p>
+<ul class="simple">
+<li><p>The package name</p></li>
+<li><p>Badges for continuous integration and test coverage. See <a class="reference external" href="#badges">the badges section</a> for more information.</p></li>
+<li><p>Short description of goals of package, with descriptive links to all vignettes (rendered, i.e. readable, cf the documentation website section) unless the package is small and there’s only one vignette repeating the README.</p></li>
+<li><p>Installation instructions</p></li>
+<li><p>Any additional setup required (authentication tokens, etc)</p></li>
+<li><p>Brief demonstration usage</p></li>
+<li><p>Direction to more detailed documentation (e.g. your documentation files or website).</p></li>
+<li><p>If applicable, how the package compares to other similar packages and/or how it relates to other packages</p></li>
+<li><p>Citation information</p></li>
+</ul>
+<p><strong>Good/Better/Best Recommendations:</strong></p>
+<ul class="simple">
+<li><p><strong>Good:</strong> README with name, description, installation instructions, and direction to further documentation.</p></li>
+<li><p><strong>Better/Best:</strong> All the above plus usage examples, citation information, and CI and/or test coverage badges.</p></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>All external package functions, classes, and methods should be fully documented with examples.</p>
+<p><strong>Good/Better/Best:</strong></p>
+<ul class="simple">
+<li><p><strong>Good:</strong> Manually updated documentation as text files that ship with your package.</p></li>
+<li><p><strong>Better:</strong> A documentation website using Sphinx to convert rst files to HTML and Read the Docs to host your site.</p></li>
+<li><p><strong>Best (optional):</strong> Also consider automatically generated documentation from docstrings using autodoc</p></li>
+</ul>
+</div>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All packages should have a test suite that covers major functionality of the package. The tests should also cover the behavior of the package in case of errors.</p></li>
+<li><p>It is good practice to write unit tests for all functions, and all package code in general, ensuring key functionality is covered. Test coverage below 75% will likely require additional tests or explanation before being sent for review.</p></li>
+<li><p>We recommend using pytest for writing tests, but you can use other tools. Strive to write tests as you write each new function. This serves the obvious need to have proper testing for the package, but allows you to think about various ways in which a function can fail, and to defensively code against those.</p></li>
+<li><p>Consider using tox to test your package with multiple versions of Python 2 and 3.</p></li>
+<li><p>If you set up CI with code coverage, use your package’s code coverage report to identify untested lines, and to add further tests.</p></li>
+</ul>
+<p><strong>Good/Better/Best:</strong></p>
+<ul class="simple">
+<li><p><strong>Good:</strong> A test suite that covers major functionality of the package.</p></li>
+<li><p><strong>Better:</strong> The above, with high code coverage.</p></li>
+<li><p><strong>Best:</strong> All of the above, plus using tox to test multiple versions of Python.</p></li>
+</ul>
+</div>
+<div class="section" id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h3>
+<p>All pyOpenSci packages must use some form of continuous integration.</p>
+<ul class="simple">
+<li><p>For Linux and Mac OSX, we suggest Travis CI.</p></li>
+<li><p>For Windows, we suggest AppVeyor CI.</p></li>
+<li><p>In many cases, you will want CI for all platforms. Different continuous integration services will support builds on different operating systems. Packages should have CI for all platforms when they contain:</p>
+<ul>
+<li><p>Compiled code</p></li>
+<li><p>Java dependencies</p></li>
+<li><p>Dependencies on other languages</p></li>
+<li><p>Packages with system calls</p></li>
+<li><p>Text munging such as getting people’s names (in order to find encoding issues).</p></li>
+<li><p>Anything with file system / path calls</p></li>
+<li><p>In case of any doubt regarding the applicability of these criteria to your package, it’s better to add CI for all platforms, and most often not too much hassle.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Good/Better/Best:</strong></p>
+<ul class="simple">
+<li><p><strong>Good:</strong> Some sort of CI service with status badge in your README.</p></li>
+<li><p><strong>Better:</strong> The above plus integrated code coverage and linting.</p></li>
+<li><p><strong>Best:</strong> Continuous integration for all platforms: Linux, Mac OSX, and Windows.</p></li>
+</ul>
+</div>
+<div class="section" id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>pyOpenSci projects should use an open source software license that is approved by the Open Software Initiative (OSI). OSI’s website has a <a class="reference external" href="https://opensource.org/licenses">list of popular licenses</a>, and GitHub has a <a class="reference external" href="https://choosealicense.com/">handy tool</a> for choosing a license.</p>
+<p><strong>Good/Better/Best:</strong></p>
+<ul class="simple">
+<li><p><strong>Good:</strong> Include a open source software license with your package.</p></li>
+<li><p><strong>Better/Best:</strong> Choose a license based on your needs and future use of package, plus explain your choice in your submission for review.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-recommendations">
+<h2>Other recommendations<a class="headerlink" href="#other-recommendations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-style">
+<h3>Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h3>
+<p>pyOpenSci encourages authors to consult <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> for information on how to style your code.</p>
+</div>
+<div class="section" id="linting">
+<h3>Linting<a class="headerlink" href="#linting" title="Permalink to this headline">¶</a></h3>
+<p>An automatic linter (e.g. flake8) can help ensure your code is clean and free of syntax errors. These can be integrated with your CI.</p>
+</div>
+<div class="section" id="badges">
+<h3>Badges<a class="headerlink" href="#badges" title="Permalink to this headline">¶</a></h3>
+<p>Badges are a useful way to draw attention to the quality of your project and to
+assure users that it is well-designed, tested, and maintained.
+It is common to provide a collection of badges in a table for others
+to quickly browse.</p>
+<p><a class="reference external" href="https://github.com/ropensci/drake">See this example of a badge table</a>. Such a table should be more wide than high. (Note that the badge for pyOpenSci peer-review will be provided upon acceptance.)</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Author’s Guide</a>
+    <a class='right-next' id="next-link" href="testing.html" title="next page">Testing your package</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The pyOpenSci Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-165151943-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

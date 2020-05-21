@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Collaboration Guide &#8212; The pyOpenSci Developer Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0-alpha.0/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Releasing a package" href="release.html" />
+    <link rel="prev" title="Testing your package" href="testing.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The pyOpenSci Developer Guide</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="active">
+    <a href="index.html">Author’s Guide</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="overview.html">Overview</a>
+    </li>
+    <li class="">
+      <a href="testing.html">Testing your package</a>
+    </li>
+    <li class="active">
+      <a href="">Collaboration Guide</a>
+    </li>
+    <li class="">
+      <a href="release.html">Releasing a package</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../process/intro.html">The Peer Review Process</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../process/aims_scope.html">Aims and Scope</a>
+    </li>
+    <li class="">
+      <a href="../process/guidelines.html">Peer Review Policies</a>
+    </li>
+    <li class="">
+      <a href="../process/coc.html">Community Code of Conduct</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../submissions/intro.html">Submission Guides</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../submissions/author_guide.html">Guide for Authors</a>
+    </li>
+    <li class="">
+      <a href="../submissions/reviewer_guide.html">Guide for Reviewers</a>
+    </li>
+    <li class="">
+      <a href="../submissions/editor_guide.html">Guide for Editors</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../appendices/templates.html">Appendix: Templates</a>
+  </li>
+  <li class="">
+    <a href="../appendices/glossary.html">Glossary</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/authoring/collaboration.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Edit this page -->
+        <a class="edit-button" href="https://github.com/pyOpenSci/dev_guide/edit/master/authoring/collaboration.md"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#make-your-repo-contribution-and-collaboration-friendly" class="nav-link">Make your repo contribution and collaboration friendly</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#code-of-conduct" class="nav-link">Code of conduct</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#contributing-guide" class="nav-link">Contributing guide</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#issue-labelling" class="nav-link">Issue labelling</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#working-with-collaborators" class="nav-link">Working with collaborators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#onboarding-collaborators" class="nav-link">Onboarding collaborators</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#working-with-collaborators-including-yourself" class="nav-link">Working with collaborators (including yourself)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#be-generous-with-attributions" class="nav-link">Be generous with attributions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#welcoming-collaborators-to-pyopensci" class="nav-link">Welcoming collaborators to pyOpenSci</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/pyOpenSci/dev_guide/edit/master/authoring/collaboration.md">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="collaboration-guide">
+<h1>Collaboration Guide<a class="headerlink" href="#collaboration-guide" title="Permalink to this headline">¶</a></h1>
+<p>Note: pyOpenSci is still building out this section of our guidebook. Many of the examples come from rOpenSci. If you have suggestions for changes, check out the <a class="reference external" href="https://github.com/pyOpenSci/dev_guide">GitHub repo</a>.</p>
+<div class="section" id="make-your-repo-contribution-and-collaboration-friendly">
+<h2>Make your repo contribution and collaboration friendly<a class="headerlink" href="#make-your-repo-contribution-and-collaboration-friendly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-of-conduct">
+<h3>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline">¶</a></h3>
+<p>We require that you use a code of conduct such as the <a class="reference external" href="http://contributor-covenant.org/">Contributor Covenant</a> in developing your package. You should document your code of conduct in a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file in the package root directory, and link to this file from the <code class="docutils literal notranslate"><span class="pre">README</span></code> file.</p>
+</div>
+<div class="section" id="contributing-guide">
+<h3>Contributing guide<a class="headerlink" href="#contributing-guide" title="Permalink to this headline">¶</a></h3>
+<p>We have a <a class="reference external" href="https://github.com/pyOpenSci/cookiecutter-pyopensci/blob/master/%7B%7Bcookiecutter.project_slug%7D%7D/CONTRIBUTING.rst">template for contributing guidelines</a> in our cookiecutter repository. Even if you’re not using cookiecutter to build your project (see our <a class="reference external" href="../packaging/#project-template">packaging guide</a> for info), you can download our CONTRIBUTING.rst as a starting point.</p>
+<p>You can tweak it a bit depending on your workflow and package. For example, make sure contributors have instructions in your CONTRIBUTING file for running local tests if not trivial. CONTRIBUTING can also contain some details about how you acknowledge contributions (see <a class="reference external" href="#attributions">this section</a>) and the roadmap of your package (cf <a class="reference external" href="https://github.com/ecohealthalliance/fasterize/blob/master/CONTRIBUTING.md">this example for R</a>).</p>
+</div>
+<div class="section" id="issue-labelling">
+<h3>Issue labelling<a class="headerlink" href="#issue-labelling" title="Permalink to this headline">¶</a></h3>
+<p>You can use labels such as “help wanted”, “good first issue”, or “beginner” to help potential collaborators, including newbies, find your repo. For more info, see this <a class="reference external" href="https://help.github.com/articles/helping-new-contributors-find-your-project-with-labels/">GitHub article</a>.</p>
+</div>
+</div>
+<div class="section" id="working-with-collaborators">
+<h2>Working with collaborators<a class="headerlink" href="#working-with-collaborators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="onboarding-collaborators">
+<h3>Onboarding collaborators<a class="headerlink" href="#onboarding-collaborators" title="Permalink to this headline">¶</a></h3>
+<p>There’s no general pyOpenSci rule as to how you should onboard collaborators. You should increase their rights to the repo as you gain trust, and you should definitely acknowledge contributions (see <a class="reference external" href="#attributions">this section</a>).</p>
+<p>You can ask a new collaborator to make PRs (see following section for assessing a PR locally, i.e. beyond CI checks) to dev/master and assess them before merging, and after a while let them push to master, although you might want to keep a system of PR reviews… even for yourself once you have team mates!</p>
+<p>A possible model for onboarding collaborators is provided by Jim Hester in <a class="reference external" href="https://github.com/jimhester/lintr/issues/318">his <code class="docutils literal notranslate"><span class="pre">lintr</span></code> repo</a>.</p>
+<p>If your problem is <em>recruiting</em> collaborators, you can post an open call like Jim Hester’s <a class="reference external" href="https://twitter.com/jimhester_/status/997109466674819074">on Twitter</a>, (<a class="reference external" href="https://github.com/jimhester/lintr/issues/318">GitHub</a>). As an pyOpenSci package author, you can also ask for help from pyOpenSci.</p>
+</div>
+<div class="section" id="working-with-collaborators-including-yourself">
+<h3>Working with collaborators (including yourself)<a class="headerlink" href="#working-with-collaborators-including-yourself" title="Permalink to this headline">¶</a></h3>
+<p>You could implement the “<a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">gitflow</a>” philosophy as explained by Amanda Dobbyn in <a class="reference external" href="https://ropensci.org/blog/2018/04/20/monkeydo/">this rOpenSci blog post</a>.</p>
+<p>One particular aspect of working with collaborators is reviewing pull requests. Even if not adopting gitflow it might make sense for repo collaborators to make PRs and have them reviewed, and in general PRs by external developers will need to be assessed. Sometimes you’ll be fine just reading the changes and trusting <a class="reference external" href="../authoring/overview#continuous-integration">Continuous integration</a>. Sometimes you’ll need to dive deeper, e.g. by downloading a copy of the branch that the PR was created from.</p>
+<p>(attributions=)</p>
+</div>
+<div class="section" id="be-generous-with-attributions">
+<h3>Be generous with attributions<a class="headerlink" href="#be-generous-with-attributions" title="Permalink to this headline">¶</a></h3>
+<p>If someone contributes to your repository consider adding them in CONTRIBUTORS, as contributor for small contributions, author for bigger contributions. Also consider adding their name near the feature/bug fix line in HISTORY We recommend your being generous with such acknowledgements.</p>
+<p>If your package was reviewed by pyOpenSci and you feel that your reviewers have made a substantial contribution to the development of your package, you may list them in CONTRIBUTORS as a reviewer. Only include reviewers after asking for their consent.</p>
+<p>Please do not list editors as contributors. Your participation in and contribution to pyOpenSci is thanks enough!</p>
+</div>
+<div class="section" id="welcoming-collaborators-to-pyopensci">
+<h3>Welcoming collaborators to pyOpenSci<a class="headerlink" href="#welcoming-collaborators-to-pyopensci" title="Permalink to this headline">¶</a></h3>
+<p>If you give someone write permissions to the repository, please contact us at earth.lab&#64;colorado.edu so that this new contributor can get invited to pyOpenSci’s GitHub organization.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="testing.html" title="previous page">Testing your package</a>
+    <a class='right-next' id="next-link" href="release.html" title="next page">Releasing a package</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The pyOpenSci Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-165151943-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Glossary &#8212; The pyOpenSci Developer Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0-alpha.0/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Appendix: Templates" href="templates.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The pyOpenSci Developer Guide</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../authoring/index.html">Author’s Guide</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../authoring/overview.html">Overview</a>
+    </li>
+    <li class="">
+      <a href="../authoring/testing.html">Testing your package</a>
+    </li>
+    <li class="">
+      <a href="../authoring/collaboration.html">Collaboration Guide</a>
+    </li>
+    <li class="">
+      <a href="../authoring/release.html">Releasing a package</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../process/intro.html">The Peer Review Process</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../process/aims_scope.html">Aims and Scope</a>
+    </li>
+    <li class="">
+      <a href="../process/guidelines.html">Peer Review Policies</a>
+    </li>
+    <li class="">
+      <a href="../process/coc.html">Community Code of Conduct</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../submissions/intro.html">Submission Guides</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="../submissions/author_guide.html">Guide for Authors</a>
+    </li>
+    <li class="">
+      <a href="../submissions/reviewer_guide.html">Guide for Reviewers</a>
+    </li>
+    <li class="">
+      <a href="../submissions/editor_guide.html">Guide for Editors</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="templates.html">Appendix: Templates</a>
+  </li>
+  <li class="active">
+    <a href="">Glossary</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/appendices/glossary.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Edit this page -->
+        <a class="edit-button" href="https://github.com/pyOpenSci/dev_guide/edit/master/appendices/glossary.md"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/pyOpenSci/dev_guide/edit/master/appendices/glossary.md">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<p>The following are common terms in the scientific python community and their
+definitions for reference.</p>
+<ul class="simple">
+<li><p><strong>branch</strong>: A parallel copy of your GitHub repo. Use branches to write code and make changes that you don’t want to affect the live version of your package. When you’re ready, you can merge the changes back to the “master” branch. More info <a class="reference external" href="https://help.github.com/articles/about-branches/">here</a>.</p></li>
+<li><p><strong>continuous integration</strong>: The practice of automatically building and testing a project’s source code as changes are made by developers. This helps identify bugs before they become a bigger problem. Travis CI is an example of a continuous integration service.</p></li>
+<li><p><strong>code coverage</strong>: A measure of the fraction of lines in a project’s code that are run during testing. 100% coverage means that every line of code is executed during the tests.</p></li>
+<li><p><strong>commit</strong>: Saving a change (or changes) to git. Via git, each save/commit is given a unique ID, which lets you easily revert to a previous save/commit.</p></li>
+<li><p><strong>documentation</strong>: Text and/or images that accompany code to explain how it works and how to use it.</p></li>
+<li><p><strong>docstring</strong>: A miniature piece of documentation within the source code, usually documenting a specific function, class, or other piece of code.</p></li>
+<li><p><strong>linting/linter</strong>: A linter is a program that you can run on your code to identify potential errors. There are many linters for Python, e.g. flake8.</p></li>
+<li><p><strong>module</strong>: A file containing Python code. Modules can define functions, classes, and more, and can be imported by other Python code to use those defined objects. Some files are meant to be run directly instead of imported. These are “scripts”.</p></li>
+<li><p><strong>open source</strong>: In simple terms, software for which the source code is freely available and can be modified and redistributed. What meets the standard of “open source” can be controversial, but the Open Source Iniative has a more thorough set of <a class="reference external" href="https://opensource.org/osd-annotated">guidelines</a>.</p></li>
+<li><p><strong>slug</strong>: A short title, containing only letters, numbers, underscores, and hyphens. For example, a slug might replace spaces with underscores. Your package’s “slug” is a handy shorthand.</p></li>
+<li><p><strong>software license</strong>: Contains the terms of use, modification, and distribution for a piece of software. Open source licenses generally grant freedom to modify and share software, but sometimes there are specific conditions. Read more from <a class="reference external" href="https://opensource.org/licenses">OSI</a>.</p></li>
+<li><p><strong>testing</strong>: Code tests check units of code to make sure that they are producing the expected result. For example, if you have a function “sum_nums” that sums numbers, you could write a test that makes sure that sum_nums(2, 2) == 4. Writing full tests helps to avoid bugs as you are writing or modifying your code.</p></li>
+<li><p><strong>version control</strong>: A system that keeps track of changes to files over time, allowing you to revert to a previous version if needed. For example, Git is the version control system that GitHub is built on.</p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="templates.html" title="previous page">Appendix: Templates</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The pyOpenSci Community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-165151943-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
